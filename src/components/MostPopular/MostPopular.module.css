@@ -1,0 +1,57 @@
+.mostPopularContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1400px;
+    margin: 50px;
+}
+
+.mostPopularContainer div {
+    width: 236px;
+    height: 330px;
+    border: 1px solid rgb(233, 232, 232);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 5px;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-top: 0px;
+}
+
+.mostPopularContainer div:hover {
+    background-color: rgb(231, 234, 231);
+}
+
+.mostPopularContainer h3 {
+    display: flex;
+    align-self: center;
+    opacity: 0.5;
+    margin: 5px;
+    padding: 5px;
+}
+
+.mostPopularContainer img {
+    margin: 0;
+    padding: 0;
+}
+
+.mostPopularContainer p {
+    font-size: 12px;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+}
+
+.rating {
+    transform: translate(0px, -70px);
+    width: 11px;
+    height: 50%;
+    z-index: 1;
+    align-self: center;
+    padding: 5px;
+    color: green;
+    background-color: white;
+    border: 1px solid purple;
+    border-top-left-radius: 15px;
+}

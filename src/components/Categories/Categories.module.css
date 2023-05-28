@@ -1,0 +1,21 @@
+.categories {
+    display: flex;
+    justify-content: center;
+}
+
+.categories ul {
+    display: flex;
+}
+
+.categories li {
+    padding: 3px;
+    margin: 0 10px;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+    
+.categories li:hover{
+    background-color: gray;
+}
+
+

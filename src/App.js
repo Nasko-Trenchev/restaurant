@@ -1,21 +1,14 @@
-import './App.css';
+import Categories from './components/Categories/Categories';
+import HomePage from './components/HomePage/HomePage';
+import NavigationHeader from './components/NavigationHeader/NavigationHeader';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavigationHeader />
+      <Categories/>
+      <HomePage />
+    </>
   );
 }
 
