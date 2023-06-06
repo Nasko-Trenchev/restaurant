@@ -1,19 +1,77 @@
+import { AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem } from '@mui/material';
+import { useState } from 'react';
+import { CatchingPokemon } from '@mui/icons-material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import styles from './NavigationHeader.module.css'
 
-export default function NavigationHeader(){
+export default function NavigationHeader() {
 
+
+    const [anchorEl, setAnchorEl] = useState(null)
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget)
+    }
+    const handleClose = () => {
+        setAnchorEl(null)
+    }
     return (
 
-        <header className={styles["navigationHeader"]}>
-            <p>Title</p>
-            <nav>
-                <ul type='none'>
-                    <li>Login</li>
-                    <li>Register</li>
-                    <li>Register</li>
-                </ul>
-            </nav>
-        </header>
+        <AppBar position='static'>
+            <Toolbar className={styles['navigationHeader']}>
+                <IconButton size='large' edge='start' color='inherit' aria-label='logo'>
+                    <CatchingPokemon />
+                </IconButton>
+                <Typography variant='h6' component={'div'} sx={{ flexGrow: 1 }}>
+                    POKEMONAPP
+                </Typography>
+                <Stack direction={'row'} spacing={2}>
+                    <Button color='inherit'>Features</Button>
+                    <Button color='inherit'>Pricing</Button>
+                    <Button color='inherit'>About</Button>
+                    <Button color='inherit'
+                        id='resources-button'
+                        onClick={handleClick}
+                        aria-controls={open ? 'recources-menu' : undefined}
+                        aria-haspopup='true'
+                        aria-expanded={open ? 'true' : undefined}
+                        endIcon={<KeyboardArrowDownIcon />}
+                    >
+                        Resources</Button>
+                    <Button color='inherit'>Login</Button>
+                </Stack>
+                <Menu id='resources-menu'
+                    anchorEl={anchorEl}
+                    open={open}
+                    MenuListProps={{
+                        'aria-labelledby': 'recources-button',
+
+                    }}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right'
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right'
+                    }}
+                >
+                    <MenuItem onClick={handleClose}>Blog</MenuItem>
+                    <MenuItem onClick={handleClose}>Podcast</MenuItem>
+                </Menu>
+            </Toolbar>
+        </AppBar>
+        // <header className={styles["navigationHeader"]}>
+        //     <p>Title</p>
+        //     <nav>
+        //         <ul type='none'>
+        //             <li>Login</li>
+        //             <li>Register</li>
+        //             <li>Register</li>
+        //         </ul>
+        //     </nav>
+        // </header>
     )
 }

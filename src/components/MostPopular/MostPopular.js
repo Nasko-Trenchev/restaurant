@@ -1,8 +1,13 @@
+import { AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem } from '@mui/material';
+import { useState } from 'react';
+import { CatchingPokemon } from '@mui/icons-material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import styles from './MostPopular.module.css'
 
-export default function MostPopular () {
+export default function MostPopular() {
 
     return (
+        
         <div className={styles["mostPopularContainer"]}>
             <div>
             <h3>Happy ресторанти</h3>

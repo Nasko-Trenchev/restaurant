@@ -7,7 +7,7 @@ function App() {
     <>
       <NavigationHeader />
       <Categories/>
-      <HomePage />
+      {/* <HomePage /> */}
     </>
   );
 }
